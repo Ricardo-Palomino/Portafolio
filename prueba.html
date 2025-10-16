@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Dev Extraordinario</title>
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+
+<body>
+    <!-- Loading Screen -->
+    <div id="loader">
+        <div class="loader-logo">DEV</div>
+        <div class="loader-bar">
+            <div class="loader-progress" id="loaderProgress"></div>
+        </div>
+        <div class="loader-text" id="loaderText">Cargando experiencia...</div>
+    </div>
+
+    <!-- Animated Background -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">{'<DEV/>'}</div>
+            <ul>
+                <li><a href="#home">Inicio</a></li>
+                <li><a href="#about">Sobre Mí</a></li>
+                <li><a href="#projects">Proyectos</a></li>
+                <li><a href="#skills-3d">Skills 3D</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+            <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-subtitle">Desarrollador Full Stack</div>
+            <h1 class="hero-title">Construyendo el Futuro Digital</h1>
+            <p class="hero-description">
+                Transformo ideas en experiencias web excepcionales con código limpio, 
+                diseño innovador y tecnologías de vanguardia.
+            </p>
+            <div class="hero-cta">
+                <a href="#projects" class="btn">Ver Proyectos</a>
+                <a href="#skills-3d" class="btn btn-secondary">Explorar Skills 3D</a>
+            </div>
+        </div>
+        <div class="scroll-indicator" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">
+            <span>SCROLL</span>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <div class="stats">
+        <div class="stat-card">
+            <div class="stat-number" data-target="10">0</div>
+            <div class="stat-label">Proyectos Completados</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number" data-target="5">0</div>
+            <div class="stat-label">Clientes Felices</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number" data-target="10">0</div>
+            <div class="stat-label">Tecnologías Dominadas</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number" data-target="1">0</div>
+            <div class="stat-label">Años de Experiencia</div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="section-header">
+            <div class="section-label">Conoce al Desarrollador</div>
+            <h2 class="section-title">Sobre Mí</h2>
+            <p class="section-description">
+                Apasionado por crear soluciones tecnológicas que marquan la diferencia
+            </p>
+        </div>
+        <div class="avatar-container">
+        <div class="avatar-ring"></div>
+         <div class="avatar">
+        <img src="assets/images/foto.png" alt="Ricardo Palomino" />
+         </div>
+        </div>
+
+            <div class="about-text">
+                <h3>Perfil Profesional</h3>
+<p>
+Soy Ricardo Palomino, Programador Junior con un año de preparación intensiva en programación y experiencia en el desarrollo de proyectos web y backend. Manejo tecnologías como <strong>HTML, CSS, JavaScript, Node.js y Python</strong>, además de bases de datos relacionales y no relacionales como <strong>MySQL</strong> y <strong>MongoDB</strong>. He participado en proyectos individuales y grupales, aplicando metodologías ágiles como <strong>Scrum</strong> y manteniendo siempre un enfoque colaborativo y orientado a resultados.
+</p>
+
+<p>
+Desde el inicio de mi formación, he desarrollado una fuerte pasión por el aprendizaje continuo y la mejora constante. Mi enfoque combina la lógica del desarrollo backend con la creatividad del frontend, buscando siempre crear soluciones eficientes y visualmente atractivas. Disfruto transformar ideas en experiencias digitales funcionales, aplicando buenas prácticas de desarrollo, control de versiones y diseño de interfaces intuitivas.
+</p>
+
+<p>
+Mi objetivo es crecer profesionalmente en el área del desarrollo de software, consolidándome como un <strong>desarrollador full stack</strong> capaz de aportar innovación, compromiso y calidad en cada proyecto. Me caracterizo por mi disciplina, adaptabilidad y entusiasmo por explorar nuevas tecnologías, con el propósito de seguir evolucionando y contribuyendo al desarrollo tecnológico de mi entorno.
+</p>
+
+                <div class="tech-stack">
+                    <span class="tech-badge">JavaScript</span>
+                    <span class="tech-badge">Express</span>
+                    <span class="tech-badge">Node.js</span>
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">Mysql</span>
+                    <span class="tech-badge">MongoDB</span>
+                    <span class="tech-badge">Html</span>
+                    <span class="tech-badge">Css</span>
+                    <span class="tech-badge">Scrum</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+        <section id="projects">
+    <div class="section-header">
+        <div class="section-label">Mi Trabajo</div>
+        <h2 class="section-title">Proyectos Destacados</h2>
+        <p class="section-description">
+            Una selección de mis mejores trabajos y proyectos más innovadores
+        </p>
+    </div>
+    <div class="projects-grid">
+        <div class="project-card">
+            <div class="project-image">
+            <img src="assets/images/gymmaster.jpg" alt="GymMaster CLI">
+         </div>
+            <div class="project-info">
+                <h3 class="project-title">GymMaster CLI</h3>
+                <p class="project-description">
+                    Sistema de gestión de gimnasios en Node.js con MongoDB e Inquirer.js, que integra transacciones, consultas avanzadas y CRUD completo en una CLI interactiva.
+                </p>
+                <div class="project-tags">
+                    <span class="tag">Node.js</span>
+                    <span class="tag">MongoDB</span>
+                    <span class="tag">Inquirer.js</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/DanielSantiagoV/GymMaster_CLI" target="_blank" class="project-link">Ver proyecto</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-image">
+            <img src="assets/images/innova.jpg" alt="GymMaster CLI">
+         </div>
+            <div class="project-info">
+                <h3 class="project-title">INNOVA-ASISTE</h3>
+                <p class="project-description">
+                    🧠 INNOVA-ASISTE es una herramienta en Python para gestionar la asistencia de estudiantes de forma ágil y centralizada. Permite registrar, editar y consultar asistencias con un enfoque educativo eficiente.
+                </p>
+                <div class="project-tags">
+                    <span class="tag">Cli</span>
+                    <span class="tag">Json</span>
+                    <span class="tag">Python</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/Ricardo-Palomino/INNOVA-ASISTE" target="_blank" class="project-link">Ver proyecto</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card">
+             <div class="project-image">
+            <img src="assets/images/DATA.jpg" alt="GymMaster CLI">
+         </div>
+            <div class="project-info">
+                <h3 class="project-title">DATAFLIX</h3>
+                <p class="project-description">
+                    Plataforma web gratuita para aprender bases de datos desde cero, con cursos, quizzes y seguimiento de progreso en una experiencia moderna y educativa.
+                </p>
+                <div class="project-tags">
+                    <span class="tag">Html</span>
+                    <span class="tag">CSS</span>
+                    <span class="tag">JavaScript</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/DanielSantiagoV/DataFlix" target="_blank" class="project-link">Ver proyecto</a>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-image">
+            <img src="assets/images/Shop.jpg" alt="GymMaster CLI">
+         </div>
+            <div class="project-info">
+                <h3 class="project-title">ShopVerse</h3>
+                <p class="project-description">
+                   Bienvenido a ShopVerse, una tienda en línea moderna centrada en tecnología, moda y productos destacados.
+                </p>
+                <div class="project-tags">
+                    <span class="tag">Html</span>
+                    <span class="tag">Css</span>
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">Tailwind</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/Ricardo-Palomino/proyecto-de-Javascript" target="_blank" class="project-link">Ver proyecto</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- 3D Skills Section -->
+    <section id="skills-3d">
+        <canvas id="skills-canvas"></canvas>
+        <div class="skills-overlay">
+            <div class="skills-header">
+                <h2 class="skills-title">Habilidades en 3D</h2>
+                <p class="skills-subtitle">Explora mis tecnologías de forma interactiva</p>
+            </div>
+            <div class="skills-instructions">
+                <div class="instruction-item">
+                    <span class="instruction-icon">🖱️</span>
+                    <span>Arrastra para rotar</span>
+                </div>
+                <div class="instruction-item">
+                    <span class="instruction-icon">🔍</span>
+                    <span>Scroll para zoom</span>
+                </div>
+                <div class="instruction-item">
+                    <span class="instruction-icon">👆</span>
+                    <span>Click para info</span>
+                </div>
+            </div>
+            <div class="skill-panel" id="skillPanel">
+                <button class="close-panel" onclick="closeSkillPanel()">×</button>
+                <h3 id="skillName">JavaScript</h3>
+                <div class="skill-level-display">
+                    <div class="skill-level-bar">
+                        <div class="skill-level-fill" id="skillLevelFill"></div>
+                    </div>
+                    <span class="skill-percentage" id="skillPercentage">95%</span>
+                </div>
+                <p id="skillDescription">Descripción de la habilidad</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Contact Section -->
+     <section id="contact">
+        <div class="section-header">
+            <div class="section-label">Conectemos</div>
+            <h2 class="section-title">Trabajemos Juntos</h2>
+            <p class="section-description">
+                ¿Tienes un proyecto en mente? Hablemos y hagámoslo realidad
+            </p>
+        </div>
+        <div class="contact-content">
+            <p class="contact-text">
+                Siempre estoy abierto a discutir nuevos proyectos, ideas creativas 
+                u oportunidades para ser parte de tu visión. No dudes en contactarme 
+                a través de cualquiera de mis redes sociales.
+            </p>
+            <div class="social-links">
+                <a href="#" class="social-link" title="GitHub">G</a>
+                <a href="#" class="social-link" title="LinkedIn">L</a>
+                <a href="#" class="social-link" title="Twitter">T</a>
+                <a href="#" class="social-link" title="Email">@</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Hecho por <span class="footer-heart"> Ricardo Palomino</span>  | © 2025 Todos los derechos reservados</p>
+    </footer>
+
+    <!-- Script principal -->
+    <script src="main.js"></script>
+</body>
+</html>
