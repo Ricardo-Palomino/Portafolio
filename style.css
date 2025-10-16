@@ -939,6 +939,24 @@
             box-shadow: 0 0 40px var(--glow-primary);
             transform: translateY(-10px) rotate(360deg);
         }
+        .social-links {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.social-link {
+  font-size: 1.6rem;
+  color: var(--primary);
+  transition: 0.3s;
+}
+
+.social-link:hover {
+  color: #00ff88; /* o el color neón que uses */
+  transform: scale(1.2);
+}
+
 
         /* ===== FOOTER ===== */
         footer {
