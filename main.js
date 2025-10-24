@@ -1,4 +1,5 @@
-  // ===== LOADER =====
+
+// ===== LOADER =====
         let progress = 0;
         const loaderInterval = setInterval(() => {
             progress += Math.random() * 15;
@@ -15,6 +16,7 @@
                 }, 500);
             }
         }, 200);
+        
 
         // ===== ANIMATED BACKGROUND =====
         const bgCanvas = document.getElementById('bg-canvas');
@@ -91,6 +93,7 @@
             bgCanvas.height = window.innerHeight;
         });
 
+        
         // ===== STATS COUNTER =====
         const statNumbers = document.querySelectorAll('.stat-number');
         let hasAnimated = false;
@@ -765,3 +768,12 @@
         });
 
         console.log('%c✨ Portfolio cargado exitosamente!', 'font-size: 16px; color: #00ff88; font-weight: bold;');
+        // 🔧 Ajustar el canvas 3D al tamaño de la pantalla
+window.addEventListener('resize', () => {
+  const width = window.innerWidth;
+  const height = window.innerHeight * 0.6; // altura proporcional
+
+  renderer.setSize(width, height);
+  camera.aspect = width / height;
+  camera.updateProjectionMatrix();
+});

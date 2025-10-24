@@ -1033,3 +1033,32 @@
   border-radius: 50%;
   display: block;
 }
+
+/* 🎨 Ajuste responsive para la sección de habilidades 3D */
+.skills-3d-container {
+  width: 100%;
+  max-width: 1000px;
+  height: 500px;
+  margin: 0 auto;
+}
+
+canvas {
+  width: 100% !important;
+  height: auto !important;
+  display: block;
+  border-radius: 12px;
+}
+
+/* 🧠 Ajustes para móviles */
+@media (max-width: 768px) {
+  .skills-3d-container {
+    height: 320px;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-3d-container {
+    height: 250px;
+  }
+}
+
